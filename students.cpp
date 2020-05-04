@@ -1,10 +1,5 @@
 #include "students.h"
 
-University::University(void)
-{
-
-}
-
 University::~University(void)
 {
 	Student *temp;
@@ -146,24 +141,24 @@ void	University::printArrayStudents(Student **arrStud, int count)
 {
 	for (int i = 0; i < count; i++)
 	{
-		cout << "Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚ â„–" << i + 1 << endl;
-		cout << "Ð¤Ð˜Ðž\t\t\t" << arrStud[i]->name << endl;
-		cout << "Ð”Ð°Ñ‚Ð° Ñ€Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ\t\t" << arrStud[i]->dateBirth << endl;
-		cout << "Ð“Ð¾Ð´ Ð¿Ð¾ÑÑ‚ÑƒÐ¿Ð»ÐµÐ½Ð¸Ñ\t\t" << arrStud[i]->yearEntry << endl;
-		cout << "Ð¤Ð°ÐºÑƒÐ»ÑŒÑ‚ÐµÑ‚, ÐºÐ°Ñ„ÐµÐ´Ñ€Ð°\t" << arrStud[i]->faculty << endl;
-		cout << "Ð“Ñ€ÑƒÐ¿Ð¿Ð°\t\t\t" << arrStud[i]->group << endl;
-		cout << "ÐÐ¾Ð¼ÐµÑ€ Ð·Ð°Ñ‡ÐµÑ‚Ð½Ð¾Ð¹ ÐºÐ½Ð¸Ð¶ÐºÐ¸\t" << arrStud[i]->numberBook << endl;
-		cout << "Ð¡Ñ€ÐµÐ´Ð½Ð¸Ð¹ Ð±Ð°Ð»Ð»\t\t" << arrStud[i]->middleBall << endl;
+		cout << "Ñòóäåíò ¹" << i + 1 << endl;
+		cout << "ÔÈÎ\t\t\t" << arrStud[i]->name << endl;
+		cout << "Äàòà ðîæäåíèÿ\t\t" << arrStud[i]->dateBirth << endl;
+		cout << "Ãîä ïîñòóïëåíèÿ\t\t" << arrStud[i]->yearEntry << endl;
+		cout << "Ôàêóëüòåò, êàôåäðà\t" << arrStud[i]->faculty << endl;
+		cout << "Ãðóïïà\t\t\t" << arrStud[i]->group << endl;
+		cout << "Íîìåð çà÷åòíîé êíèæêè\t" << arrStud[i]->numberBook << endl;
+		cout << "Ñðåäíèé áàëë\t\t" << arrStud[i]->middleBall << endl;
 		cout << endl;
 	}
 }
 
 void	University::printTwoArrayStudents(void)
 {
-	cout << "\nÐ¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚Ñ‹ Ð¾Ñ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ñ‹ Ð¿Ð¾ ÑÑ€ÐµÐ´Ð½ÐµÐ¼Ñƒ Ð±Ð°Ð»Ð»Ñƒ." << endl;
-	cout << "Ð¡Ð¿Ð¸ÑÐ¾Ðº ÑÑ‚ÐµÐ´ÐµÐ½Ñ‚Ð¾Ð² Ð¾Ñ‚ Ð Ð´Ð¾ ÐŸ:" << endl;
+	cout << "\nÑòóäåíòû îòñîðòèðîâàíû ïî ñðåäíåìó áàëëó." << endl;
+	cout << "Ñïèñîê ñòåäåíòîâ îò À äî Ï:" << endl;
 	printArrayStudents(this->oneSortStud, this->countFirstArray);
-	cout << "\nÐ¡Ð¿Ð¸ÑÐ¾Ðº ÑÑ‚ÐµÐ´ÐµÐ½Ñ‚Ð¾Ð² Ð¾Ñ‚ Ð  Ð´Ð¾ Ð¯:" << endl;
+	cout << "\nÑïèñîê ñòåäåíòîâ îò Ð äî ß:" << endl;
 	printArrayStudents(this->twoSortStud,
 			this->countStudents - this->countFirstArray);
 }
@@ -201,32 +196,31 @@ void University::print(void)
 	int		i;
 
 	i = 0;
-	cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð² " << this->countStudents << endl;
 	for (Student *iter = this->stud; iter; iter = iter->next)
 	{
-		cout << "Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚ â„–" << ++i << endl;
-		cout << "Ð¤Ð˜Ðž\t\t\t" << iter->name << endl;
-		cout << "Ð”Ð°Ñ‚Ð° Ñ€Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ\t\t" << iter->dateBirth << endl;
-		cout << "Ð“Ð¾Ð´ Ð¿Ð¾ÑÑ‚ÑƒÐ¿Ð»ÐµÐ½Ð¸Ñ\t\t" << iter->yearEntry << endl;
-		cout << "Ð¤Ð°ÐºÑƒÐ»ÑŒÑ‚ÐµÑ‚, ÐºÐ°Ñ„ÐµÐ´Ñ€Ð°\t" << iter->faculty << endl;
-		cout << "Ð“Ñ€ÑƒÐ¿Ð¿Ð°\t\t\t" << iter->group << endl;
-		cout << "ÐÐ¾Ð¼ÐµÑ€ Ð·Ð°Ñ‡ÐµÑ‚Ð½Ð¾Ð¹ ÐºÐ½Ð¸Ð¶ÐºÐ¸\t" << iter->numberBook << endl;
-		cout << "Ð¡Ñ€ÐµÐ´Ð½Ð¸Ð¹ Ð±Ð°Ð»Ð»\t\t" << iter->middleBall << endl;
+		cout << "Ñòóäåíò ¹" << ++i << endl;
+		cout << "ÔÈÎ\t\t\t" << iter->name << endl;
+		cout << "Äàòà ðîæäåíèÿ\t\t" << iter->dateBirth << endl;
+		cout << "Ãîä ïîñòóïëåíèÿ\t\t" << iter->yearEntry << endl;
+		cout << "Ôàêóëüòåò, êàôåäðà\t" << iter->faculty << endl;
+		cout << "Ãðóïïà\t\t\t" << iter->group << endl;
+		cout << "Íîìåð çà÷åòíîé êíèæêè\t" << iter->numberBook << endl;
+		cout << "Ñðåäíèé áàëë\t\t" << iter->middleBall << endl;
 		cout << endl;
 	}
+	cout << "Êîëè÷åñòâî ñòóäåíòîâ " << this->countStudents << endl;
 }
 
 void	University::printMenu(void)
 {
-	cout << "\nÐ’Ñ‹Ð±Ð¸Ñ€ÐµÑ‚Ðµ Ð¾Ð´Ð¸Ð½ Ð¸Ð· Ð¿ÑƒÐ½ÐºÑ‚Ð¾Ð² Ð¼ÐµÐ½ÑŽ:" << endl;
-	cout << "\t1. Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°." << endl;
-	cout << "\t2. Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°." << endl;
-	cout << "\t3. ÐÐ°Ð¿ÐµÑ‡Ð°Ñ‚Ð°Ñ‚ÑŒ Ð²ÑÐµÑ… ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð²." << endl;
-	cout << "\t4. Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¿Ð¾ ÑÑ€ÐµÐ´Ð½ÐµÐ¼Ñƒ Ð±Ð°Ð»Ð»Ñƒ Ð¸ Ð½Ð°Ð¿ÐµÑ‡Ð°Ñ‚Ð°Ñ‚ÑŒ." << endl;
-	cout << "\t5. Ð¡Ñ‡Ð¸Ñ‚Ð°Ñ‚ÑŒ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð² Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°." << endl;
-	cout << "\t6. Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ." << endl;
-	cout << "\t7. Ð’Ñ‹Ñ…Ð¾Ð´." << endl;
-
+	cout << "\nÂûáèðåòå îäèí èç ïóíêòîâ ìåíþ:" << endl;
+	cout << "\t1. Äîáàâèòü ñòóäåíòà." << endl;
+	cout << "\t2. Óäàëèòü ñòóäåíòà." << endl;
+	cout << "\t3. Íàïå÷àòàòü âñåõ ñòóäåíòîâ." << endl;
+	cout << "\t4. Ñîðòèðîâàòü ïî ñðåäíåìó áàëëó è íàïå÷àòàòü." << endl;
+	cout << "\t5. Ñ÷èòàòü ñòóäåíòîâ èç ôàéëà." << endl;
+	cout << "\t6. Ñîõðàíèòü." << endl;
+	cout << "\t7. Âûõîä." << endl;
 }
 
 void	University::addStudent(void)
@@ -234,23 +228,23 @@ void	University::addStudent(void)
 	string buf;
 
 	Student *temp = new Student();
-	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¤Ð˜Ðž ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°." << endl;
+	cout << "Ââåäèòå ÔÈÎ ñòóäåíòà." << endl;
 	cin >> temp->name;
-	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ñ‚Ñƒ Ñ€Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ." << endl;
+	cout << "Ââåäèòå äàòó ðîæäåíèÿ." << endl;
 	cin >> temp->dateBirth;
-	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð³Ð¾Ð´ Ð¿Ð¾ÑÑ‚ÑƒÐ¿Ð´ÐµÐ½Ð¸Ñ." << endl;
+	cout << "Ââåäèòå ãîä ïîñòóïäåíèÿ." << endl;
 	cin >> buf;
 	temp->yearEntry = atoi(buf.c_str());
-	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°ÐºÑƒÐ»ÑŒÑ‚ÐµÑ‚ Ð¸ ÐºÐ°Ð´Ñ€Ñƒ." << endl;
+	cout << "Ââåäèòå ôàêóëüòåò è êàäðó." << endl;
 	cin >> temp->faculty;
-	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð³Ñ€ÑƒÐ¿Ð¿Ñƒ." << endl;
+	cout << "Ââåäèòå ãðóïïó." << endl;
 	cin >> temp->group;
-	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð·Ð°Ñ‡ÐµÑ‚Ð½Ð¾Ð¹ ÐºÐ½Ð¸Ð¶ÐºÐ¸." << endl;
+	cout << "Ââåäèòå íîìåð çà÷åòíîé êíèæêè." << endl;
 	cin >> buf;
 	temp->numberBook = atoi(buf.c_str());
-	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÑ€ÐµÐ´Ð½Ð¸Ð¹ Ð±Ð°Ð»Ð» Ð¿Ð¾ Ð²ÑÐµÐ¼ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°Ð¼." << endl;
+	cout << "Ââåäèòå ñðåäíèé áàëë ïî âñåì ïðåäìåòàì." << endl;
 	cin >> buf;
-	temp->middleBall = atof(buf.c_str());
+	temp->middleBall = stof(buf.substr(3));
 	temp->next = this->stud;
 	this->stud = temp;
 	this->countStudents++;
@@ -264,7 +258,7 @@ void	University::deleteStudent(void)
 	string	buf;
 	int		num;
 	
-	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°, ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð³Ð¾ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ." << endl;
+	cout << "Ââåäèòå íîìåð ñòóäåíòà, êîòîðîãî õîòèòå óäàëèòü." << endl;
 	cin >> buf;
 	num = atoi(buf.c_str());
 	pre = NULL;
@@ -273,7 +267,7 @@ void	University::deleteStudent(void)
 	{
 		if (!(--num))
 		{
-			cout << "Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚ " <<  iter->name << " ÑƒÐ´Ð°Ð»ÐµÐ½.\n";
+			cout << "Ñòóäåíò " <<  iter->name << " óäàëåí.\n";
 			this->countStudents--;
 			if (pre == NULL)
 				this->stud = iter->next;
@@ -285,73 +279,73 @@ void	University::deleteStudent(void)
 		pre = iter;
 		iter = iter->next;
 	}
-	cout << "Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚Ð° Ð¿Ð¾Ð´ Ñ‚Ð°ÐºÐ¸Ð¼ Ð½Ð¾Ð¼ÐµÑ€Ð¾Ð¼ Ð½Ðµ ÑÑƒÑ‡ÐµÑÑ‚Ð²ÑƒÐµÑ‚." << endl;
+	cout << "Ñòóäåíòà ïîä òàêèì íîìåðîì íå ñó÷åñòâóåò." << endl;
 }
 
 void University::readStudentsFromFile(void)
 {
 	char	nameFile[100];
-	FILE	*fd_in;
-	char	buf[LENBUF + 1];
+	string	buf;
+	string	subStr;
 	int		num;
 
-	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°." << endl;
+	ifstream in;
+	cout << "Ââåäèòå èìÿ ôàéëà." << endl;
 	cin >> nameFile;
-	if((fd_in = fopen(nameFile, "r")) == NULL)
+	in.open(nameFile);
+	if(!in.is_open())
 	{
-		cout << "Ð¤Ð°Ð¹Ð» Ð½Ðµ Ð¾Ð±Ð½Ð°Ñ€ÑƒÐ¶ÐµÐ½.\n";
+		cout << "\nÔàéë " << nameFile << " íå îáíàðóæåí.\n";
 		return ;
 	}
+	else
+		cout << "\nÔàéë " << nameFile << " ñ÷èòàí.\n";
 	if (this->stud == NULL)
 	{
 		this->stud = new Student();
 		this->countStudents = 1;
 	}
-	while (fgets(buf, LENBUF, fd_in))
+	while (!in.eof())
 	{
-		buf[strlen(buf) - 1] = '\0';
-		num = atoi(buf);
+		getline(in, buf);
+		num = atoi(buf.c_str());
 		if (num == 1)
-			this->stud->name = buf + 3;
+			this->stud->name = buf.substr(3);
 		else if (num == 2)
-			this->stud->dateBirth = buf + 3;
+			this->stud->dateBirth = buf.substr(3);
 		else if (num == 3)
-			this->stud->yearEntry = atoi(buf + 3);
+			this->stud->yearEntry = stoi(buf.substr(3));
 		else if (num == 4)
-			this->stud->faculty = buf + 3;
+			this->stud->faculty = buf.substr(3);
 		else if (num == 5)
-			this->stud->group = buf + 3;
+			this->stud->group = buf.substr(3);
 		else if (num == 6)
-			this->stud->numberBook = atol(buf + 3);
+			this->stud->numberBook = stoi(buf.substr(3));
 		else if (num == 7)
-			this->stud->middleBall = atof(buf + 3);
-		else if (buf[0] == '\0')
+			this->stud->middleBall = stof(buf.substr(2));
+		else if (buf == "")
 			addNewStudent();
 	}
 	deleteEmptyStudent();
-	if (fclose(fd_in))
-	{
-		cout << "Error in closing file.\n";
-		exit(1);
-	}
+	in.close();
 	sortStudentsAlphabet();
 }
 
 void	University::writeStudentsToFile(void)
 {
-	char	nameFile[100];
-	int		i;
+	char		nameFile[100];
+	ofstream	out;
 
-	i = -1;
-	ofstream out;
-	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð° ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ." << endl;
+	cout << "Ââåäèòå èìÿ ôàéëà ñîõðàíåíèÿ." << endl;
 	cin >> nameFile;
 	out.open(nameFile);
 	if(!out.is_open())
 	{
-		cout << "ÐžÑˆÐ¸Ð±ÐºÐ° ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð°.\n";
+		cout << "Îøèáêà ñîçäàíèÿ ôàéëà " << nameFile << endl;
 		return ;
 	}
+	else
+		cout << "Ôàéë " << nameFile << " çàïèñàí.";
 	for (Student *iter = this->stud; iter; iter = iter->next)
 	{
 		out << "1. ";
@@ -402,9 +396,9 @@ void	University::workingProgram(void)
 
 int	main(void)
 {
-	setlocale(LC_ALL, "");
-	University *uni = new University();
+	setlocale(LC_ALL, "Russian");
 
+	University *uni = new University();
 	uni->workingProgram();
 	delete uni;
 	return (0);

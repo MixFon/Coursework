@@ -6,6 +6,8 @@
 #include <iostream>
 #include <fstream>
 #include <wchar.h>
+#include <windows.h>
+
 
 #define	LENBUF 4096
 
@@ -44,7 +46,6 @@ class University
 
 
 	public:
-		University(void);
 		~University(void);
 		void	workingProgram(void);
 
@@ -59,7 +60,6 @@ class University
 		void	splitTwoLists(void);
 		void	addNewStudent(void);
 		void	addStudent(void);
-		void	printSortArrStudent(void);
 		void	printMenu(void);
 		void	deleteStudent(void);
 		void	writeStudentsToFile(void);
