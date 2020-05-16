@@ -7,22 +7,19 @@
 #include <fstream>
 #include <wchar.h>
 #include <windows.h>
+#include <cstdlib>
 
 
 #define	LENBUF 4096
 
 using namespace std;
 
-union number
-{
-	char	buf[2];
-	short	num;
-};
-
 class Student
 {
 	public:
+		string	surname;
 		string	name;
+		string	patronik;
 		string	dateBirth;
 		int		yearEntry;	
 		string	faculty;

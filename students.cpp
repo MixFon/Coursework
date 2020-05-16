@@ -16,7 +16,6 @@ University::~University(void)
 
 Student::Student(void)
 {
-	memset(this, 0, sizeof(Student));
 	this->next = NULL;
 }
 
@@ -102,17 +101,14 @@ void	University::sortStudentsAlphabet(void)
 
 int		University::calculateStudents(void)
 {
-	Student *iter;
-	int		i;
-	union number u_num;
+	Student			*iter;
+	int				i;
 
 	i = 0;
 	iter = this->stud;	
 	while(iter)
 	{
-		u_num.buf[1] = iter->name[0];
-		u_num.buf[0] = iter->name[1];
-		if ((u_num.num & 0xffff) < 0xD0A0)
+		if (iter->name < "Р")
 			i++;
 		iter = iter->next;
 	}
@@ -228,8 +224,12 @@ void	University::addStudent(void)
 	string buf;
 
 	Student *temp = new Student();
-	cout << "Введите ФИО студента." << endl;
+	cout << "Введите фамилию студента." << endl;
+	cin >> temp->surname;
+	cout << "Введите имя студента." << endl;
 	cin >> temp->name;
+	cout << "Введите отчество студента." << endl;
+	cin >> temp->patronik;
 	cout << "Введите дату рождения." << endl;
 	cin >> temp->dateBirth;
 	cout << "Введите год поступдения." << endl;
@@ -244,7 +244,8 @@ void	University::addStudent(void)
 	temp->numberBook = atoi(buf.c_str());
 	cout << "Введите средний балл по всем предметам." << endl;
 	cin >> buf;
-	temp->middleBall = stof(buf.substr(3));
+	temp->middleBall = atof(buf.c_str());
+	temp->name = temp->surname + " " + temp->name + " " + temp->patronik;
 	temp->next = this->stud;
 	this->stud = temp;
 	this->countStudents++;
@@ -396,7 +397,8 @@ void	University::workingProgram(void)
 
 int	main(void)
 {
-	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 
 	University *uni = new University();
 	uni->workingProgram();
